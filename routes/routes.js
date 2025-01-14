@@ -1,27 +1,20 @@
 import express from 'express'
+import { dataData, createData, updateData, deleteData } from '../controllers/data.controllers.js'
 
 const router = express.Router()
 
 // CRUD
 
 // R - For get all data
-router.get('/', (req, res) => {
-    res.send({data: 'Read data'})
-})
+router.get('/', dataData)
 
 // C - For create a Data
-router.post('/', () => {
-    res.send({data: 'Create data'})
-})
+router.post('/', createData)
 
 // U - for update data
-router.put('/:id', () => {
-    res.send({data: 'Update data'})
-})
+router.put('/:id', updateData)
 
 // D - for delete data
-router.delete('/:id', () => {
-    res.send({data: 'Delete data'})
-})
+router.delete('/:id', deleteData)
 
 export default router
